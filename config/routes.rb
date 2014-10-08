@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/search', to: 'search#index', as: 'search'
   resources :authorships
 
   resources :authors
@@ -10,7 +11,7 @@ Rails.application.routes.draw do
   end
 
 
-  root to: 'articles#index'
+  root to: 'search#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
