@@ -1,4 +1,7 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
+  mount Sidekiq::Web => '/sidekiq'
   get '/search', to: 'search#index', as: 'search'
   resources :authorships
 
